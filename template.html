@@ -1,7 +1,5 @@
-<h1>TABELLA</h1>
-<button class="btn btn-success">Should be bootstrap style</button>
+
 <div class="bootstrap_inside" qv-extension style="height: 100%; position: relative; overflow: auto;">
-<button class="btn btn-success">Should be bootstrap style</button>
 	<table class="table table-striped">
 		<thead>
 		<tr>
@@ -9,18 +7,10 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr ng-repeat="row in myTable track by $index">
-			<td ng-repeat="cell in row track by $index" 
-				class="selectable" 
-				ng-class="{'selected':cell.selected,'numeric':cell.qNum}" 
-				qva-activate="cell.select($event)"
-				ng-show="cell.Valore">VALORE : {{cell.Content}} - {{cell.Valore}}</td>
 
-			<td ng-repeat="cell in row track by $index" 
-				class="selectable" 
-				ng-class="{'selected':cell.selected,'numeric':cell.qNum}" 
-				qva-activate="cell.select($event)"
-				ng-hide="cell.Valore">SIMBOLO : {{cell.Content}} - {{cell.Valore}}</td>
+		<tr ng-repeat="row in myTable track by $index">
+			<td ng-repeat="cell in row track by $index" class="selectable" ng-class="{'selected':cell.selected,'numeric':cell.qNum}" qva-activate="cell.select($event)">{{cell.Content}}</td>
+		    
 		</tr>
 		</tbody>
 	</table>
