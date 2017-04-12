@@ -3,15 +3,45 @@
 	<table class="table table-striped">
 		<thead>
 		<tr>
-			<th ng-repeat="head in layout.qHyperCube.qDimensionInfo track by $index" qva-activate="head.orderBy()">{{head.qFallbackTitle}}</th>
+			<th ng-repeat="head in layout.qHyperCube.qDimensionInfo track by $index" qva-activate="head.orderBy()"><h3>{{head.qFallbackTitle}}</h3></th>
 		</tr>
 		</thead>
 		<tbody>
 
 		<tr ng-repeat="row in myTable track by $index">
-			<td ng-repeat="cell in row track by $index" class="selectable" ng-class="{'selected':cell.selected,'numeric':cell.qNum}" qva-activate="cell.select($event)">{{cell.Content}}</td>
+			<td ng-repeat="cell in row track by $index" 
+				class="selectable" 
+				ng-class="{'selected':cell.selected,'numeric':cell.qNum}" 
+				qva-activate="cell.select($event)"> 
+
+					<!--  Questo blocco scrive il valore -->
+				  <div ng-show="cell.Valore">
+				  	{{cell.Content}}
+				  </div>
+
+				  <div ng-show="!cell.Valore">
+				  		<!--  Blocco Motori -->
+				      <div class="EngContainer" ng-show="!cell.Visualizzazione">
+							<button type="button" ng-class=cell.Buttons ng-repeat="motore in cell.Content track by $index">{{cell.Prefisso}}{{$index+1}}</button>
+				      		
+				      </div>
+
+				      <!--  Blocco Semaforo -->
+				      <div ng-show="cell.Visualizzazione" style="color: {{cell.Colore}}">
+				      
+				      <svg class="semaforo" width="34" height="34">
+				      		<circle fill={{cell.Colore}} cx="18" cy="15" r="14"></circle>
+				      </svg>
+				      		
+				      		
+				      </div>
+				  	  
+				  </div>
+
+				</td>
 		    
-		</tr>
+
+
 		</tbody>
 	</table>
 	
