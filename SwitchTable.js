@@ -4,6 +4,7 @@ define( [
 	"text!./css/style.css", 
 //	"css!./css/scoped-bootstrap.css", 
 	"text!./template.html",
+	"./lib/Service",
 	"./lib/Settings",
 	"./lib/Controller"
 	], 
@@ -31,6 +32,7 @@ define( [
 					qWidth : 20,
 					qHeight : 500
 				}]
+		//		,qMode: "P"
 			}
 		},
 		definition : VarDefinition
@@ -40,12 +42,16 @@ define( [
 	me.paint= function (layout) {
 			//setup scope.table
 
+			//this.$scope.$apply()
+			console.log(this.$scope);
+			this.$scope.myTable = makemyTable(this.$scope.layout);
+
 			if(!this.$scope.layout.settings) {
 				this.$scope.layout = qlik.layout(this);
 			} 
 
 			return qlik.Promise.resolve();
-		};
+	};
 
 	me.controller = Controller;
 
