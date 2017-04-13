@@ -23,7 +23,7 @@
 				  <div ng-show="!cell.Valore">
 				  		<!--  Blocco Motori -->
 				      <div class="EngContainer" ng-show="!cell.Visualizzazione">
-							<button type="button" ng-class=cell.Buttons ng-repeat="motore in cell.Content track by $index">{{cell.Prefisso}}{{$index+1}}</button>
+							<button type="button" ng-class=cell.Buttons ng-repeat="motore in cell.Content track by $index" ng-click="motori($idex)">{{cell.Prefisso}}{{$index+1}}</button>
 				      		
 				      </div>
 
@@ -31,7 +31,7 @@
 				      <div ng-show="cell.Visualizzazione" style="color: {{cell.Colore}}">
 				      
 				      <svg class="semaforo" width="34" height="34">
-				      		<circle fill={{cell.Colore}} cx="18" cy="15" r="14"></circle>
+				      		<circle ng-click="makeSelection()" fill={{cell.Colore}} cx="18" cy="15" r="14"></circle>
 				      </svg>
 				      		
 				      		
@@ -40,6 +40,13 @@
 				  </div>
 
 				</td>
+
+				<td ng-click="openRown($idex)" ng-show="layout.settings.listFieldPivot.length >0"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></td>
+
+				<table ng-show="Aperto" class="table table-striped">
+					<tr><h1 >APERTO</h1></tr>
+				</table>
+				
 		    
 
 
