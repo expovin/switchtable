@@ -1,5 +1,13 @@
 
 <div class="bootstrap_inside" qv-extension style="height: 100%; position: relative; overflow: auto;">
+
+<div class="btn-group" role="group">
+  <button type="button" class="btn btn-primary" ng-click="collapseAll()"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></button>
+  <button type="button" class="btn btn-primary" ng-click="expandAll()"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button>
+</div>
+
+ 
+
 	<table class="table table-striped">
 		<thead>
 		<tr>
@@ -41,13 +49,26 @@
 
 				</td>
 
-				<td ng-click="openRown($idex)" ng-show="layout.settings.listFieldPivot.length >0"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></td>
+				<!-- <td ng-click="openRown($idex)" ng-show="layout.settings.listFieldPivot.length >0"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></td> -->
 
-				<table ng-show="Aperto" class="table table-striped">
-					<tr><h1 >APERTO</h1></tr>
+
+				<td>
+				<table ng-show="innerTable" class="table table-striped">
+					<thead>
+						<tr>
+							<th ng-repeat="(innHead,innValue) in myTable[0].SubDocStream[0]">{{innHead}}</th>
+						</th>
+					</thead>
+					<tbody>
+						<tr ng-repeat="innRow in row.SubDocStream track by $index">
+							<td ng-repeat="innCell in innRow track by $index">{{innCell.Content}}</td>
+						</tr>
+					</tbody>					
 				</table>
+				</td>
+
 				
-		    
+		 </tr>  
 
 
 		</tbody>
