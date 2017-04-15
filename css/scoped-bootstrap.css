@@ -3005,6 +3005,7 @@ select[multiple].bootstrap_inside .input-lg {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+/*  margin-right: 3px;*/
 }
 .bootstrap_inside .btn:focus,
 .bootstrap_inside .btn:active:focus,
@@ -3415,6 +3416,10 @@ fieldset[disabled] .bootstrap_inside .btn-link:hover,
 fieldset[disabled] .bootstrap_inside .btn-link:focus {
   color: #777777;
   text-decoration: none;
+}
+
+.bootstrap_insid .btn-space {
+    margin-right: 3px;
 }
 .bootstrap_inside .btn-lg {
   padding: 10px 16px;

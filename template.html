@@ -31,7 +31,7 @@
 				  <div ng-show="!cell.Valore">
 				  		<!--  Blocco Motori -->
 				      <div class="EngContainer" ng-show="!cell.Visualizzazione">
-							<button type="button" ng-class=cell.Buttons ng-repeat="motore in cell.Content track by $index" ng-click="motori($idex)">{{cell.Prefisso}}{{$index+1}}</button>
+							<button type="button" ng-class=cell.Buttons ng-repeat="motore in cell.Content track by $index" ng-click="makeSelection($parent.$index)">{{cell.Prefisso}}{{$index+1}}</button>
 				      		
 				      </div>
 
@@ -39,7 +39,7 @@
 				      <div ng-show="cell.Visualizzazione" style="color: {{cell.Colore}}">
 				      
 				      <svg class="semaforo" width="34" height="34">
-				      		<circle ng-click="makeSelection()" fill={{cell.Colore}} cx="18" cy="15" r="14"></circle>
+				      		<circle ng-click="makeSelection($index)" fill={{cell.Colore}} cx="18" cy="15" r="14"></circle>
 				      </svg>
 				      		
 				      		
