@@ -27,7 +27,7 @@ define( [
        initialProperties : {
 			qHyperCubeDef : {
 				qDimensions : [],
-				qMeasures : [],
+			//	qMeasures : [],
 				qInitialDataFetch : [{
 					qWidth : 20,
 					qHeight : 500
