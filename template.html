@@ -2,7 +2,7 @@
 <div class="bootstrap_inside" qv-extension style="height: 100%; position: relative; overflow: auto;">
 
 <div class="btn-group" role="group">
-  <button type="button" class="btn btn-primary" ng-click="collapseAll()"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></button>
+  <button type="button" class="btn btn-primary btn-space" ng-click="collapseAll()"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></button>
   <button type="button" class="btn btn-primary" ng-click="expandAll()"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button>
 </div>
 
@@ -49,12 +49,18 @@
 
 				</td>
 
-				<!-- <td ng-click="openRown($idex)" ng-show="layout.settings.listFieldPivot.length >0"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></td> -->
+			 	<td ng-show="layout.settings.listFieldPivot.length >0" class="OpenRowAction">
+			 		<div class="showme">
+			 			<span class="glyphicon glyphicon-plus" aria-hidden="true" ng-click="openRow($index)" ng-show="!row.Open"></span>
+			 			<span class="glyphicon glyphicon-minus" aria-hidden="true" ng-click="closeRow($index)" ng-show="row.Open"></span>
+
+			 		</div>
+			 	</td>
 
 
 				<td>
 
-					<table ng-show="innerTable" class="table table-striped table-condensed table-hover">
+					<table ng-show="innerTable || row.Open" class="table table-striped table-condensed table-hover">
 						<thead>
 							<tr>
 								<th ng-repeat="(innHead,innValue) in myTable[0].SubRec[0]">{{innHead}}</th>

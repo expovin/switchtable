@@ -24,3 +24,13 @@
 	text-align: center;
 }
 
+.OpenRowAction {
+	width: 30px;
+}
+.showme{ 
+	display: none;
+}
+
+tr:hover .showme{
+	display : block;
+}
