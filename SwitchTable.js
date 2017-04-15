@@ -27,7 +27,7 @@ define( [
        initialProperties : {
 			qHyperCubeDef : {
 				qDimensions : [],
-			//	qMeasures : [],
+				qMeasures : [],
 				qInitialDataFetch : [{
 					qWidth : 20,
 					qHeight : 500
@@ -42,13 +42,9 @@ define( [
 	me.paint= function (layout) {
 			//setup scope.table
 
-			//this.$scope.$apply()
-			//console.log(this.$scope);
 			this.$scope.myTable = makemyTable(this.$scope.layout);
-			console.log(this.$scope.myTable);
 			this.$scope.QlikApp =  qlik.currApp();
 			this.$scope.navigation  = qlik.navigation;
-			//console.log(qlik);
 
 
 
