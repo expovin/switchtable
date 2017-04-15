@@ -43,8 +43,9 @@ define( [
 			//setup scope.table
 
 			//this.$scope.$apply()
-			console.log(this.$scope);
+			//console.log(this.$scope);
 			this.$scope.myTable = makemyTable(this.$scope.layout);
+			console.log(this.$scope.myTable);
 			this.$scope.QlikApp =  qlik.currApp();
 			this.$scope.navigation  = qlik.navigation;
 			//console.log(qlik);

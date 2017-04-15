@@ -7,18 +7,18 @@
 </div>
 
  
-
+    
 	<table class="table table-striped">
 		<thead>
 		<tr>
 		<!--	<th ng-repeat="head in layout.qHyperCube.qDimensionInfo track by $index" qva-activate="head.orderBy()"><h3>{{head.qFallbackTitle}}</h3></th> -->
-			<th ng-repeat="(head,value) in myTable[0].MainStream track by $index" qva-activate="head.orderBy()"><h3>{{head}}</h3></th>
+			<th ng-repeat="(head,value) in myTable[0].TbRow track by $index" qva-activate="head.orderBy()"><h3>{{head}}</h3></th>
 		</tr>
 		</thead>
 		<tbody>
 
 		<tr ng-repeat="row in myTable track by $index">
-			<td ng-repeat="cell in row.MainStream track by $index" 
+			<td ng-repeat="cell in row.TbRow track by $index" 
 				class="selectable" 
 				ng-class="{'selected':cell.selected,'numeric':cell.qNum}" 
 				qva-activate="cell.select($event)"> 
@@ -56,11 +56,11 @@
 				<table ng-show="innerTable" class="table table-striped">
 					<thead>
 						<tr>
-							<th ng-repeat="(innHead,innValue) in myTable[0].SubDocStream[0]">{{innHead}}</th>
+							<th ng-repeat="(innHead,innValue) in myTable[0].SubRec[0]">{{innHead}}</th>
 						</th>
 					</thead>
 					<tbody>
-						<tr ng-repeat="innRow in row.SubDocStream track by $index">
+						<tr ng-repeat="innRow in row.SubRec track by $index">
 							<td ng-repeat="innCell in innRow track by $index">{{innCell.Content}}</td>
 						</tr>
 					</tbody>					
