@@ -43,6 +43,7 @@ define( [
 			//setup scope.table
 
 			this.$scope.myTable = makemyTable(this.$scope.layout);
+			this.$scope.numOfColls = Object.size(this.$scope.myTable[0].TbRow);
 			this.$scope.QlikApp =  qlik.currApp();
 			this.$scope.navigation  = qlik.navigation;
 
