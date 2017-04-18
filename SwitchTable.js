@@ -42,6 +42,7 @@ define( [
 	me.paint= function (layout) {
 			//setup scope.table
 
+			console.log(layout);
 			this.$scope.myTable = makemyTable(this.$scope.layout);
 			this.$scope.numOfColls = Object.size(this.$scope.myTable[0].TbRow);
 			this.$scope.QlikApp =  qlik.currApp();
