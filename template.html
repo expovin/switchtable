@@ -37,12 +37,12 @@
 				  <div ng-show="!cell.Valore">
 				  		<!--  Blocco Motori -->
 				      <div class="EngContainer" ng-show="!cell.Visualizzazione">
-							<button type="button" 	ng-class=cell.Buttons 
+							<button type="button" 	ng-class="cell.Buttons[$index]"
 													ng-repeat="motore in cell.Content track by $index" 
 													ng-click="makeSelection($parent.$index)"
 													ng-show="cell.Numerazione">{{cell.Prefisso}}{{$index+1}}</button>
 
-							<button type="button" 	ng-class=cell.Buttons 
+							<button type="button" 	ng-class="cell.Buttons[$index]" 
 													ng-repeat="motore in cell.Content track by $index" 
 													ng-click="makeSelection($parent.$index)"
 													ng-hide="cell.Numerazione">{{cell.Prefisso}}&nbsp</button>
